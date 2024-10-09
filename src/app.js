@@ -8,5 +8,7 @@ console.log(process.env.MONGODB_URI);
 import router from "./routes/routes.js";
 // Routes
 app.use("/api/v1/coins", router);
-
+app.use("*", (req, res) => {
+  res.status(404).json({ message: "Page not found" });
+});
 export default app;
