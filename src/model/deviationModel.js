@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const deviationSchema = new mongoose.Schema({
   coin: {
@@ -17,3 +17,4 @@ const deviationSchema = new mongoose.Schema({
 });
 
 const Deviation = mongoose.model("Deviation", deviationSchema);
+export default Deviation
