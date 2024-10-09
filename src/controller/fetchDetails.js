@@ -1,6 +1,6 @@
 import axios from "axios";
 import Crypto from "../model/cryptoModel.js";
-
+import Deviation from "../model/deviationModel.js";
 const fetchCryptoData = async () => {
   const coins = ["bitcoin", "matic-network", "ethereum"];
   const promises = [];
@@ -66,4 +66,27 @@ const fetchCryptoData = async () => {
   }
 };
 
-export default fetchCryptoData;
+const updatedDeviationDataTime = async () => {
+  const coins = ["bitcoin", "matic-network", "ethereum"]; // Define the coins to update
+  const currentTime = new Date(); // Get the current time
+
+  try {
+    // Update the calculated_at time for each coin
+    await Promise.all(
+      coins.map(async (coin) => {
+        await Deviation.findOneAndUpdate(
+          { coin }, // Match the coin
+          { calculated_at: currentTime }, // Update the calculated_at time
+          { new: true } // Return the updated document
+        );
+        console.log(`Updated calculated_at for ${coin} to ${currentTime}`);
+      })
+    );
+  } catch (error) {
+    console.error("Error while updating cronTime Data at DB:", error.message);
+  }
+};
+
+
+
+export { fetchCryptoData, updatedDeviationDataTime};
