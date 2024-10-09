@@ -1,6 +1,7 @@
 import Joi from "joi";
 import _ from "lodash";
-import Crypto from "../model/Crypto.js";
+import Crypto from "../model/cryptoModel.js";
+import Deviation from "../model/deviationModel.js";
 import { ApiError } from "../utils/apiError.js";
 // Validation schema
 const schema = Joi.object({

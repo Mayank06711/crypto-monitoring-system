@@ -1,5 +1,5 @@
 import axios from "axios";
-import Crypto from "../model/Crypto.js";
+import Crypto from "../model/cryptoModel.js";
 
 const fetchCryptoData = async () => {
   const coins = ["bitcoin", "matic-network", "ethereum"];
