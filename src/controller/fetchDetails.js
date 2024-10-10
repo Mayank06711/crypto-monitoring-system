@@ -45,11 +45,7 @@ const fetchCryptoData = async () => {
       coin,
       price: data.current_price,
       marketCap: data.market_cap,
-      market_cap_rank: data.market_cap_rank,
       change24h: data.price_change_percentage_24h,
-      total_supply: data.total_supply,
-      max_supply: data.max_supply,
-      circulating_supply: data.circulating_supply,
     }));
 
     // Create documents in bulk

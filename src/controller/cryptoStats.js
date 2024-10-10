@@ -1,6 +1,6 @@
 import Joi from "joi";
 import Crypto from "../model/cryptoModel.js";
-import { ApiError } from "../utils/apiError.js";
+import { ApiError } from "../utils/ApiError.js"
 const schema = Joi.object({
   coin: Joi.string().valid("bitcoin", "matic-network", "ethereum").required(),
 });

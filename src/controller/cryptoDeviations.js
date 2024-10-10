@@ -2,7 +2,7 @@ import Joi from "joi";
 import _ from "lodash";
 import Crypto from "../model/cryptoModel.js";
 import Deviation from "../model/deviationModel.js";
-import { ApiError } from "../utils/apiError.js";
+import { ApiError } from "../utils/ApiError.js";
 // Validation schema
 const schema = Joi.object({
   coin: Joi.string().valid("bitcoin", "matic-network", "ethereum").required(),
